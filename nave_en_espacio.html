@@ -21,6 +21,18 @@
 				cursor: pointer;
 			}
 		</style>
+		<script>
+			function decisionEsconderse() {
+				alert(
+					"Te escondes en el campo de asteroides, pero la nave sufre daños."
+				);
+				window.location.href = "campo_asteroides.html";
+			}
+			function decisionEnfrentar() {
+				alert("Derribas a la nave cazadora, pero ahora conocen tu ubicación.");
+				window.location.href = "ubicacion_revelada.html";
+			}
+		</script>
 	</head>
 	<body>
 		<h1>Nave en el Espacio</h1>
