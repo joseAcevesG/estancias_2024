@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Una Acentura en el espacio</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body{
+            background-image: url("images/espacio.webp");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            backdrop-filter: blur(4px);
+
+        }
+        button{
+            display: block;
+            margin: 10px;
+            color: yellow;
+            background-color: rgba(0, 0, 0, 0.5);
+            border: 2px solid yellow;
+            cursor: pointer;
+            padding: 10px;
+        }
+    </style>
+    <script>
+        function desicionEsconder() {
+            alert("deciste esocnderte")
+            window.location.href="asteroides.html"
+        }
+        function desicionEnfrentar(){
+            alert("enfrentas a los piratas")
+            window.location.href="piratas.html"
+        }
+    </script>
+</head>
+<body>
+    <h1>CANTINA DE NOVA HAVEN</h1>
+    <div class="container">
+        <p>naves piratas estan en tu camino que haces?</p>
+        <button onclick="desicionEsconder()">
+            Esconder en asteroides
+        </button>
+        <button onclick="desicionEnfrentar()">
+            enfrentar naves
+        </button>
+    </div>
+</body>
+</html>
