@@ -13,17 +13,35 @@
             background-position: center;
             backdrop-filter: blur(4px);
         }
+        button{
+            display: block;
+            margin: 10px;
+            color: yellow;
+            background-color: rgba(0, 0, 0, 0.5);
+            border: 2px solid yellow;
+            cursor: pointer;
+        }
     </style>
+    <script>
+        function desicionEsconder() {
+            alert("Desidiste esconderte")
+            window.location.href="asteroides.html"
+        }
+        function desicionAtacar() {
+            alert("Atacas a los piratas")
+            window.location.href="atacar.html"
+        }
+    </script>
 </head>
 <body>
     <h1>Espacio</h1>
     <div class="container">
         <p>Te encuentras a unos piatas espaciales, ¿Qué haces?</p>
-        <button>
-            atacar a los piratas
+        <button onclick="desicionAtacar()">
+            Atacar a los piratas
         </button>
-        <button>
-            esconderte en los asteroides
+        <button onclick="desicionEsconder()">
+            Esconderte en los asteroides
         </button>
     </div>
 </body>
