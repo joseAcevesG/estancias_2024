@@ -43,6 +43,13 @@ function acctionButon(){
     count++
 }
 
+function borrarNodo(){
+    const div=document.getElementById("div")
+    let node=div.firstElementChild
+    node.remove()
+    count--
+}
+
 let arr=["amarillo","azul","blanco","nanranja"]
 
 
