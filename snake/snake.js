@@ -19,7 +19,7 @@ let frames
 
 function setup(){
     canvas=createCanvas(ANCHO_CANVAS,ALTO_CANVAS)
-    frames=15
+    frames=10
     frameRate(frames)
     snake=new Snake()
 
@@ -55,6 +55,9 @@ function draw(){
 }
 
 function keyPressed(){
+    if(!isLooping()){
+        juegoNuevo()
+    }
     switch(keyCode){
         case UP_ARROW:
             if(snake.cola.length!=0 && snake.direccion.equals(abajo)){
@@ -85,6 +88,12 @@ function keyPressed(){
 
 function posicionarComida(){
     comida=createVector(floor(random(COLUMNAS)),floor(random(FILAS)))
+}
+
+function juegoNuevo(){
+    snake=new Snake()
+    posicionarComida()
+    loop()
 }
 
 function finJuego(){
