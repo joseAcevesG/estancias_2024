@@ -13,8 +13,12 @@ let abajo
 let izquierda
 let derecha
 
+let frames
+
 function setup(){
     canvas=createCanvas(ANCHO_CANVAS,ALTO_CANVAS)
+    frames=20
+    frameRate(frames)
     snake=new Snake()
 
     arriba=createVector(0,-1)
