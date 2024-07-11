@@ -13,6 +13,8 @@ let abajo
 let izquierda
 let derecha
 
+let comida
+
 let frames
 
 function setup(){
@@ -25,6 +27,9 @@ function setup(){
     abajo=createVector(0,1)
     derecha=createVector(1,0)
     izquierda=createVector(-1,0)
+
+    comida=createVector()
+    posicionarComida()
 }
 
 function windowResized(){
@@ -40,6 +45,9 @@ function draw(){
     background("black")
 
     snake.dibujar()
+
+    fill("crimson")
+    rect(comida.x*LADO,comida.y*LADO,LADO,LADO)
 }
 
 function keyPressed(){
@@ -59,6 +67,9 @@ function keyPressed(){
     }
 }
 
+function posicionarComida(){
+    comida=createVector(floor(random(COLUMNAS)),floor(random(FILAS)))
+}
 
 function Snake(){
     this.posicion=createVector(COLUMNAS/2,FILAS/2)
