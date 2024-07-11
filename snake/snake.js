@@ -19,7 +19,7 @@ let frames
 
 function setup(){
     canvas=createCanvas(ANCHO_CANVAS,ALTO_CANVAS)
-    frames=20
+    frames=15
     frameRate(frames)
     snake=new Snake()
 
@@ -48,6 +48,9 @@ function draw(){
 
     fill("crimson")
     rect(comida.x*LADO,comida.y*LADO,LADO,LADO)
+    if(snake.posicion.equals(comida)){
+        posicionarComida()
+    }
 }
 
 function keyPressed(){
