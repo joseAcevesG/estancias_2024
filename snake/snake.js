@@ -57,15 +57,27 @@ function draw(){
 function keyPressed(){
     switch(keyCode){
         case UP_ARROW:
+            if(snake.cola.length!=0 && snake.direccion.equals(abajo)){
+                break
+            }
             snake.direccion=arriba
         break
         case DOWN_ARROW:
+            if(snake.cola.length!=0 && snake.direccion.equals(arriba)){
+                break
+            }
             snake.direccion=abajo
         break
         case RIGHT_ARROW:
+            if(snake.cola.length!=0 && snake.direccion.equals(izquierda)){
+                break
+            }
             snake.direccion=derecha
         break
         case LEFT_ARROW:
+            if(snake.cola.length!=0 && snake.direccion.equals(derecha)){
+                break
+            }
             snake.direccion=izquierda
         break
     }
