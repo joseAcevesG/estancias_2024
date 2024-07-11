@@ -87,6 +87,15 @@ function posicionarComida(){
     comida=createVector(floor(random(COLUMNAS)),floor(random(FILAS)))
 }
 
+function finJuego(){
+    if(snake.choque()){
+        noLoop()
+        textAlign(CENTER,CENTER)
+        textSize(50)
+        text("GAME OVER",width/2,height/2)
+    }
+}
+
 function Snake(){
     this.posicion=createVector(COLUMNAS/2,FILAS/2)
     this.direccion=createVector()
@@ -110,6 +119,15 @@ function Snake(){
         }
     }
 
+    this.choque=function(){
+        for(let i=0;i<this.cola.length;i++){
+            if(this.posicion.equals(this.cola[i])){
+                return true
+            }
+        }
+        return false
+    }
+
     this.dibujar=function(){
         fill("white")
         rect(this.posicion.x*LADO,this.posicion.y*LADO,LADO,LADO)
@@ -126,5 +144,7 @@ function Snake(){
         this.posicion.add(this.direccion)
         
         this.bordes()
+        
+        finJuego()
     }
 }
