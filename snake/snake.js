@@ -51,6 +51,8 @@ function draw(){
     if(snake.posicion.equals(comida)){
         posicionarComida()
         snake.tamaño++
+        frames+=5;
+        frameRate(frames)
     }
 }
 
@@ -93,6 +95,8 @@ function posicionarComida(){
 function juegoNuevo(){
     snake=new Snake()
     posicionarComida()
+    frames=15
+    frameRate(frames)
     loop()
 }
 
