@@ -50,6 +50,7 @@ function draw(){
     rect(comida.x*LADO,comida.y*LADO,LADO,LADO)
     if(snake.posicion.equals(comida)){
         posicionarComida()
+        snake.tamaño++
     }
 }
 
@@ -78,6 +79,10 @@ function Snake(){
     this.posicion=createVector(COLUMNAS/2,FILAS/2)
     this.direccion=createVector()
 
+    this.cola=[]
+
+    this.tamaño=0
+
     this.bordes=function(){
         if(this.posicion.x>=COLUMNAS){
             this.posicion.x=0
@@ -96,7 +101,18 @@ function Snake(){
     this.dibujar=function(){
         fill("white")
         rect(this.posicion.x*LADO,this.posicion.y*LADO,LADO,LADO)
+        for(let i=0;i<this.cola.length;i++){
+            fill("white")
+            rect(this.cola[i].x*LADO,this.cola[i].y*LADO,LADO,LADO)
+        }
+
+        this.cola.push(this.posicion.copy())
+        if(this.cola.length>this.tamaño){
+            this.cola.splice(0,1)
+        }
+        
         this.posicion.add(this.direccion)
+        
         this.bordes()
     }
 }
